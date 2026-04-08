@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ffe4ec,#fff);
+    text-align:center;
+    overflow:hidden;
+}
+
+h1,h2{color:#d6336c;}
+.hidden{display:none;}
+
+button{
+    padding:12px 20px;
+    border-radius:20px;
+    border:none;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    margin:5px;
+}
+
+/* HEART FLOAT */
+.heart{
+    position:fixed;
+    color:red;
+    animation:float 6s linear infinite;
+}
+@keyframes float{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-10vh);}
+}
+
+/* PARAGRAPH */
+.paragraph{
+    opacity:0;
+    transform:translateY(20px);
+    transition:1s;
+    width:80%;
+    margin:15px auto;
+}
+
+/* FOTO */
+.gallery{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.polaroid{
+    background:white;
+    padding:10px;
+    margin:10px;
+    width:200px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+.polaroid img{width:100%;}
+.caption{margin-top:5px;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<audio id="music" autoplay loop>
+<source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- LOGIN -->
+<div id="login">
+<h1>🔐 Password dulu ya 💖</h1>
+<p>Clue: Hari kita resmi jadi "kita" 🥰</p>
+<input id="pass"><br><br>
+<button onclick="loginFunc()">Masuk</button>
+</div>
+
+<!-- GAME 1 -->
+<div id="g1" class="hidden">
+<h2>Pilih hati suami yang paling mencintai kamu ❤️</h2>
+<button onclick="g1(1)">💙</button>
+<button onclick="g1(2)">💛</button>
+<button onclick="g1(3)">❤️</button>
+<p id="r1"></p>
+</div>
+
+<!-- GAME 2 -->
+<div id="g2" class="hidden">
+<h2>Pilih Suami atau BYD ATTO 1 😆</h2>
+<button onclick="pilihSuami()">Aku pilih suami 💖</button>
+<button id="byd">BYD ATTO 1 🚗</button>
+<p id="r2"></p>
+</div>
+
+<!-- GAME 3 -->
+<div id="g3" class="hidden">
+<h2>Kalau suami lagi kangen jadi apa? 😆</h2>
+<button onclick="g3(0)">Jalan-jalan 🚶</button>
+<button onclick="g3(1)">Bucin sama kamu 💖</button>
+<p id="r3"></p>
+</div>
+
+<!-- GAME 4 -->
+<div id="g4" class="hidden">
+<h2>Makanan favorit suami apa? 🤔</h2>
+<button onclick="g4(0)">Pecak Bandeng 🐟</button>
+<button onclick="g4(1)">Kamu 😍</button>
+<p id="r4"></p>
+</div>
+
+<!-- MAIN -->
+<div id="main" class="hidden">
+
+<h1>🎉 Selamat Ulang Tahun 🎂</h1>
+<h2>Mutia Dwi Ahmadi 💖</h2>
+
+<div class="paragraph">Untuk kamu, Mutia Dwi Ahmadi — wanita tercantik yang pernah hadir dalam hidupku.</div>
+<div class="paragraph">Hari ini bukan hanya tentang bertambahnya usia kamu, tapi tentang betapa bersyukurnya aku memiliki kamu di sisiku.</div>
+<div class="paragraph">Perjalanan kita mungkin belum lama, tapi begitu berarti. Tiga tahun kita saling mengenal dan mencintai, dan hampir satu tahun kita mengikat janji sebagai suami istri.</div>
+<div class="paragraph">Setiap momen bersamamu adalah hal yang tidak pernah ingin aku tukar dengan apa pun di dunia ini.</div>
+<div class="paragraph">Aku ingin kamu tahu, tidak pernah sekalipun aku menyesal memilih kamu sebagai istriku.</div>
+<div class="paragraph">Kamu adalah rumah bagiku, tempat aku pulang dan merasa tenang.</div>
+<div class="paragraph">Aku sangat menyayangimu… sampai tua nanti ❤️</div>
+<div class="paragraph">Selamat ulang tahun sayangku ❤️</div>
+
+<div class="gallery">
+<div class="polaroid">
+<img src="foto1.jpg">
+<div class="caption">Awal kita ❤️</div>
+</div>
+
+<div class="polaroid">
+<img src="foto2.jpg">
+<div class="caption">Selamanya 💍</div>
+</div>
+</div>
+
+</div>
+
+<script>
+// AUTO PLAY FIX
+document.addEventListener("click",()=>{
+document.getElementById("music").play().catch(()=>{});
+},{once:true});
+
+// LOGIN
+function loginFunc(){
+if(pass.value==="11-05-2025"){
+login.style.display="none";
+g1.classList.remove("hidden");
+}else{
+alert("Salah 😆 coba lagi");
+}
+}
+
+// GAME 1
+function g1(x){
+if(x==1) r1.innerText="Kurang bucin 😆 tapi tetap cinta kok";
+if(x==2) r1.innerText="Bucin sedang 😏 lumayan lah";
+if(x==3) r1.innerText="BUCIN BANGET 😍 suami tergila-gila sama kamu";
+setTimeout(()=>{
+g1.style.display="none";
+g2.classList.remove("hidden");
+},1500);
+}
+
+// GAME 2
+function pilihSuami(){
+r2.innerText="Terimakasih sudah memilih aku 😭💖";
+setTimeout(()=>{
+g2.style.display="none";
+g3.classList.remove("hidden");
+},1500);
+}
+
+// tombol BYD kabur
+const byd=document.getElementById("byd");
+byd.addEventListener("mouseover",()=>{
+byd.style.position="absolute";
+byd.style.left=Math.random()*80+"%";
+byd.style.top=Math.random()*80+"%";
+});
+
+// GAME 3
+function g3(x){
+if(x==0){
+r3.innerText="Salah 😆 kangen kamu bukan jalan-jalan";
+}else{
+r3.innerText="Benar 😍 bucin sama kamu selamanya";
+setTimeout(()=>{
+g3.style.display="none";
+g4.classList.remove("hidden");
+},1500);
+}
+}
+
+// GAME 4
+function g4(x){
+if(x==0){
+r4.innerText="Salah 😆 itu mah lauk";
+}else{
+r4.innerText="Benar 😍 kamu favorit selamanya";
+setTimeout(()=>{
+g4.style.display="none";
+main.classList.remove("hidden");
+showText();
+},1500);
+}
+}
+
+// TEXT FADE
+function showText(){
+const p=document.querySelectorAll(".paragraph");
+p.forEach((el,i)=>{
+setTimeout(()=>{
+el.style.opacity=1;
+el.style.transform="translateY(0)";
+},i*1200);
+});
+}
+
+// HEART
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},400);
+
+</script>
+
+</body>
+</html>
